@@ -3,7 +3,7 @@ export default async function page_header() {
 	template.classList.add('page-header');
 	template.innerHTML = `
 	<nav class="main-nav">
-		<span data-page="stories" style="background: linear-gradient(#7F7FD5, #86A8E7, #91EAE4)">📖 Từ điển truyện</span>
+		<span data-page="stories" style="background: linear-gradient(#7F7FD5, #86A8E7, #91EAE4)">📖 Danh mục truyện</span>
 		<span data-page="vocabulary" style="background: linear-gradient(#f12711, #f5af19)">💬 Từ ngữ</span>
 		<span data-page="book-review" style="background: linear-gradient(#11998e, #38ef7d)">🌟 Book review</span>
 	</nav>
