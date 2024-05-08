@@ -1,0 +1,307 @@
+:root {
+  --dark_1: #1C1C1E;
+  --dark_2: #272727;
+  --dark_3: #333333;
+  --light_1: #E5E5E5;
+  --light_2: #666666;
+  --light_3: #F4F4F4;
+  --light_4: #CCCCCC;
+  --white: #FFFFFF;
+	--blue_1: #0077b6;
+	--blue_2: #caf0f8;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: sans-serif;
+	outline: 0;
+}
+
+::-webkit-scrollbar {
+	display: none;
+}
+
+.mr-4 {
+	margin-right: 4px;
+}
+
+.mr-8 {
+	margin-right: 8px;
+}
+
+.mr-auto {
+	margin-right: auto;
+}
+
+.mt-4 {
+	margin-top: 4px;
+}
+
+.mt-8 {
+	margin-top: 8px;
+}
+
+.mb-4 {
+	margin-bottom: 4px;
+}
+
+.mb-8 {
+	margin-bottom: 8px;
+}
+
+.mb-12 {
+	margin-bottom: 14px;
+}
+
+.mb-14 {
+	margin-bottom: 14px;
+}
+
+.mb-18 {
+	margin-bottom: 18px;
+}
+
+.mb-24 {
+	margin-bottom: 24px;
+}
+
+.mb-28 {
+	margin-bottom: 28px;
+}
+
+.mb-auto {
+	margin-bottom: auto;
+}
+
+.ml-auto {
+	margin-left: auto;
+}
+
+.rounded-8 {
+	border-radius: 8px;
+}
+
+.rounded-14 {
+	border-radius: 14px;
+}
+
+.circle {
+	border-radius: 50%;
+}
+
+.cursor-pointer {
+	cursor: pointer;
+}
+
+.d-block {
+	display: block;
+}
+
+.d-flex {
+	display: flex;
+}
+
+.d-grid {
+	display: grid;
+}
+
+.align-items-center {
+	align-items: center;
+}
+
+.justify-content-center {
+	justify-content: space-center;
+}
+
+.justify-content-between {
+	justify-content: space-between;
+}
+
+.grid-2 {
+	grid-template: auto / 1fr 1fr;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.text-secondary {
+	color: var(--light_2);
+}
+
+html,
+body {
+	font-size: 16px;
+	background: var(--light_3);
+	line-height: 1.4;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+nav * {
+	cursor: pointer;
+}
+
+#app {
+	max-width: 540px;
+	margin: 0 auto;
+	width: 100%;
+	min-height: 100vh;
+	background: var(--blue_2);
+}
+
+.image {
+	position: relative;
+	background: var(--light_1) no-repeat center;
+	background-size: cover;
+}
+
+.page-header {
+	padding: 16px;
+	overflow: hidden;
+	background: var(--white);
+}
+
+.page-header nav {
+	display: flex;
+	align-items: center;
+	overflow: auto;
+	white-space: nowrap;
+}
+
+.page-header nav span {
+	margin-right: 4px;
+	border-radius: 100px;
+	padding: 8px 14px;
+	color: var(--white);
+	font-weight: 600;
+}
+
+.search-form {
+	padding: 16px;
+	background: var(--white);
+}
+
+.search-form .search-box {
+	display: flex;
+	align-items: center;
+	background: var(--light_3);
+	border-radius: 14px;
+	padding-left: 16px;
+}
+
+.search-form .search-box input {
+	height: auto;
+	padding: 16px;
+	border: 0;
+	background: transparent;
+}
+
+.header {
+	position: sticky;
+	left: 0;
+	top: 0;
+	z-index: 1;
+	background: var(--white);
+	overflow: hidden;
+}
+
+.header nav {
+	padding: 12px 16px;
+	border-bottom: 1px solid var(--light_1);
+	display: flex;
+	align-items: center;
+	overflow: auto;
+  white-space: nowrap;
+}
+
+.header nav span {
+	display: inline-block;
+	padding: 8px 14px;
+	margin-right: 4px;
+	color: var(--light_2);
+	background: var(--light_3);
+	border-radius: 100px;
+	font-weight: 600;
+}
+
+.header nav span.active {
+	color: var(--blue_1);
+	background: var(--blue_2);
+}
+
+.vocabulary-page ul {
+	list-style: none;
+	padding: 16px 16px 28px;
+}
+
+.vocabulary-page ul li {
+	display: block;
+	padding: 12px 16px;
+	border-radius: 14px;
+	margin-bottom: 8px;
+	background: var(--white);
+}
+
+.vocabulary-page ul li .tag {
+	display: inline-block;
+	border-radius: 100px;
+	padding: 4px 8px;
+	font-weight: 600;
+	color: var(--blue_1);
+	border: 1px solid var(--blue_1);
+	font-size: smaller;
+}
+
+.vocabulary-page ul li .content {
+	margin-top: 14px;
+	display: none;
+}
+
+.vocabulary-page ul li .content.show {
+	display: block;
+}
+
+.vocabulary-page ul li .toggle {
+	transition: .2s;
+}
+
+.vocabulary-page ul li .toggle.active {
+	transform: rotate(45deg);
+}
+
+.vocabulary-page ul li .content > div {
+	background: #ffe6d3;
+	border-radius: 10px;
+	padding: 8px 14px;
+}
+
+.vocabulary-page ul li .content .image {
+	padding-top: calc(9 / 16 * 100%);
+}
+
+.stories-page .page {
+	padding: 8px;
+}
+
+.stories-page .item {
+	border-radius: 14px;
+	background: var(--white);
+	padding: 12px;
+	text-align: center;
+}
+
+.stories-page .item .image {
+	padding-top: calc(5 / 3 * 100%);
+	border-radius: 8px;
+	margin-bottom: 6px;
+}
