@@ -16,7 +16,7 @@ export default async function stories_page() {
 		</nav>
 	</div>
 	<div class="page">
-		<div class="d-grid grid-2" style="grid-gap: 6px;"></div>
+		<div class="d-grid grid-2 grid-lg-4" style="grid-gap: 6px;"></div>
 	</div>
 	`;
 	
@@ -25,13 +25,13 @@ export default async function stories_page() {
 			template.querySelector('.topics span.active').classList.remove('active');
 			e.currentTarget.classList.add('active');
 			
-			current_topic = parseInt(e.currentTarget.getAttribute('data-topic'));
-			console.log(current_topic)
+			current_topic = parseInt(e.currentTarget.getAttribute('data-topic')) || '';
+			
 			render_list({topic: current_topic});
 		});
 	});
 	
-	function render_list({topic}) {
+	async function render_list({topic}) {
 		template.querySelector('.d-grid').innerHTML = '';
 		
 		let list = stories;
@@ -42,7 +42,7 @@ export default async function stories_page() {
 		}
 		
 		if (!list.length) {
-			template.querySelector('.d-grid').innerHTML = '<div style="grid-column: 1/3" class="text-center">Không có dữ liệu</div>';
+			template.querySelector('.d-grid').innerHTML = '<div style="grid-column: 1/5" class="text-center">Không có dữ liệu</div>';
 			return false;
 		}
 		
@@ -53,9 +53,29 @@ export default async function stories_page() {
 			<figure class="image" style="background-image: url(${item.image})"></figure>
 			<h4>${item.name}</h4>
 			`;
+			div.querySelector('.image').addEventListener('click', async e => {
+				document.body.appendChild(await render_popup({image: item.image}))
+			});
 			
 			template.querySelector('.d-grid').appendChild(div);
 		}
+	}
+	
+	async function render_popup({image}) {
+		let popup = document.createElement('div');
+		popup.classList.add('popup');
+		popup.innerHTML = `
+		<div class="overlay"></div>
+		<div class="content">
+			<img class="mb-12" src="${image}">
+			<button class="btn" style="width: 100%;">Đóng</button>
+		</div>
+		`;
+		
+		popup.querySelector('.btn').addEventListener('click', e => popup.remove());
+		popup.querySelector('.overlay').addEventListener('click', e => popup.remove());
+		
+		return popup;
 	}
 	
 	render_list({topic: ''});

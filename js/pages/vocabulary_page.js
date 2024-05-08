@@ -62,7 +62,7 @@ export default async function vocabulary_page() {
 		}
 		
 		if (!list.length) {
-			template.querySelector('ul').innerHTML = '<li class="text-center">Không có dữ liệu</li>';
+			template.querySelector('ul').innerHTML = '<li style="grid-column: 1/5; background: transparent;" class="text-center">Không có dữ liệu</li>';
 			return false;
 		}
 		
@@ -88,7 +88,7 @@ export default async function vocabulary_page() {
 				</div>
 				${item.image
 				? `
-				<figure class="image rounded-8" style="background-image: url(${item.image}); margin-top: 8px;"></figure>
+				<figure class="image rounded-8" style="background-image: url(${item.image});"></figure>
 				`
 				: ''
 				}

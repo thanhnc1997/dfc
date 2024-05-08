@@ -185,4 +185,29 @@ export const stories = [
 	},
 ];
 
-export const book_review = [];
+export const book_review = [
+	{
+		id: 'br1',
+		reviewer: {
+			name: 'Hoàng Quỳnh Chi',
+			class: '4A8'
+		},
+		video: 'videos/1.mp4'
+	},
+	{
+		id: 'br2',
+		reviewer: {
+			name: 'Lê Đỗ Yên Hà',
+			class: '5A6'
+		},
+		video: 'videos/2.mp4'
+	},
+	{
+		id: 'br3',
+		reviewer: {
+			name: 'Vũ Quỳnh Anh',
+			class: '4A7'
+		},
+		video: 'videos/3.mp4'
+	}
+];
