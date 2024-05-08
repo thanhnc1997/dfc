@@ -8,7 +8,8 @@ export default async function stories_page() {
 	template.innerHTML = `
 	<div class="header">
 		<nav class="topics">
-			<span class="active" data-topic="1">Đoàn kết</span>
+			<span class="active" data-topic="">Tất cả</span>
+			<span data-topic="1">Đoàn kết</span>
 			<span data-topic="2">Góp sức bảo vệ an ninh</span>
 			<span data-topic="3">Hiếu học</span>
 			<span data-topic="4">Người phụ nữ anh hùng hoặc có tài</span>
@@ -34,14 +35,14 @@ export default async function stories_page() {
 		template.querySelector('.d-grid').innerHTML = '';
 		
 		let list = stories;
-		if (topic) {
+		if (topic || topic != '') {
 			list = stories.filter(item => {
 				if (item.topic == topic) return item;
 			});
 		}
 		
 		if (!list.length) {
-			template.querySelector('ul').innerHTML = '<div style="grid-column: 1/3" class="text-center">Không có dữ liệu</div>';
+			template.querySelector('.d-grid').innerHTML = '<div style="grid-column: 1/3" class="text-center">Không có dữ liệu</div>';
 			return false;
 		}
 		
@@ -57,7 +58,7 @@ export default async function stories_page() {
 		}
 	}
 	
-	render_list({});
+	render_list({topic: ''});
 	
 	return template;
 }

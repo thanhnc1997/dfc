@@ -23,6 +23,23 @@
 	display: none;
 }
 
+@media (min-width: 1140px) {
+	::-webkit-scrollbar {
+		display: inherit;
+		width: 8px;
+		height: 8px;
+	}
+
+	::-webkit-scrollbar-track {
+		background: transparent;
+	}
+
+	::-webkit-scrollbar-thumb {
+		background: var(--light_1);
+		border-radius: 100px;
+	}
+}
+
 .mr-4 {
 	margin-right: 4px;
 }
