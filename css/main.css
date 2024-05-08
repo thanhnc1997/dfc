@@ -201,12 +201,12 @@ nav * {
 }
 
 .page-header {
-	padding: 16px;
 	overflow: hidden;
 	background: var(--white);
 }
 
 .page-header nav {
+	padding: 16px;
 	display: flex;
 	align-items: center;
 	overflow: auto;
