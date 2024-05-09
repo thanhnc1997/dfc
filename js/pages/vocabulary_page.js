@@ -1,7 +1,7 @@
 import {vocabulary} from '../data.js';
 
-let current_unit = 4,
-		current_lesson = 1;
+let current_unit,
+		current_lesson;
 
 export default async function vocabulary_page() {
 	const template = document.createElement('div');
@@ -105,7 +105,7 @@ export default async function vocabulary_page() {
 		}
 	}
 	
-	render_list({unit: current_unit, lesson: current_lesson});
+	render_list({unit: 4, lesson: 1});
 	
 	return template;
 }
